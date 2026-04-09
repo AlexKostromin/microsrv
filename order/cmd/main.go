@@ -22,11 +22,11 @@ import (
 )
 
 const (
-	httpPort            = "8080"
-	inventoryGRPCAddr   = "localhost:50051"
-	paymentGRPCAddr     = "localhost:50052"
-	readHeaderTimeout   = 5 * time.Second
-	shutdownTimeout     = 10 * time.Second
+	httpPort          = "8080"
+	inventoryGRPCAddr = "localhost:50051"
+	paymentGRPCAddr   = "localhost:50052"
+	readHeaderTimeout = 5 * time.Second
+	shutdownTimeout   = 10 * time.Second
 )
 
 // Order внутренняя структура заказа
@@ -67,7 +67,7 @@ func (h *OrderHandler) CreateOrder(ctx context.Context, req *orderV1.CreateOrder
 	if err != nil {
 		return &orderV1.InternalServerError{
 			Code:    500,
-			Message: "failed to get parts from inventory: " + err.Error(),
+			Message: "failed to get parts from payment: " + err.Error(),
 		}, nil
 	}
 

@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        (unknown)
-// source: inventory/v1/inventory.proto
+// source: payment/v1/payment.proto
 
-// Package inventory.v1 содержит API для работы с деталями космических кораблей
+// Package payment.v1 содержит API для работы с деталями космических кораблей
 
 package inventory_v1
 
@@ -357,7 +357,7 @@ type Part struct {
 	// stock_quantity количество на складе
 	StockQuantity int64 `protobuf:"varint,5,opt,name=stock_quantity,json=stockQuantity,proto3" json:"stock_quantity,omitempty"`
 	// category категория детали
-	Category Category `protobuf:"varint,6,opt,name=category,proto3,enum=inventory.v1.Category" json:"category,omitempty"`
+	Category Category `protobuf:"varint,6,opt,name=category,proto3,enum=payment.v1.Category" json:"category,omitempty"`
 	// dimensions размеры детали
 	Dimensions *Dimensions `protobuf:"bytes,7,opt,name=dimensions,proto3" json:"dimensions,omitempty"`
 	// manufacturer информация о производителе
@@ -496,7 +496,7 @@ type PartsFilter struct {
 	// names список имён для фильтрации
 	Names []string `protobuf:"bytes,2,rep,name=names,proto3" json:"names,omitempty"`
 	// categories список категорий для фильтрации
-	Categories []Category `protobuf:"varint,3,rep,packed,name=categories,proto3,enum=inventory.v1.Category" json:"categories,omitempty"`
+	Categories []Category `protobuf:"varint,3,rep,packed,name=categories,proto3,enum=payment.v1.Category" json:"categories,omitempty"`
 	// manufacturer_countries список стран производителей
 	ManufacturerCountries []string `protobuf:"bytes,4,rep,name=manufacturer_countries,json=manufacturerCountries,proto3" json:"manufacturer_countries,omitempty"`
 	// tags список тегов для фильтрации
@@ -758,7 +758,7 @@ var File_inventory_v1_inventory_proto protoreflect.FileDescriptor
 
 const file_inventory_v1_inventory_proto_rawDesc = "" +
 	"\n" +
-	"\x1cinventory/v1/inventory.proto\x12\finventory.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"j\n" +
+	"\x1cinventory/v1/payment.proto\x12\fpayment.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"j\n" +
 	"\n" +
 	"Dimensions\x12\x16\n" +
 	"\x06length\x18\x01 \x01(\x01R\x06length\x12\x14\n" +
@@ -783,37 +783,37 @@ const file_inventory_v1_inventory_proto_rawDesc = "" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x14\n" +
 	"\x05price\x18\x04 \x01(\x01R\x05price\x12%\n" +
 	"\x0estock_quantity\x18\x05 \x01(\x03R\rstockQuantity\x122\n" +
-	"\bcategory\x18\x06 \x01(\x0e2\x16.inventory.v1.CategoryR\bcategory\x128\n" +
+	"\bcategory\x18\x06 \x01(\x0e2\x16.payment.v1.CategoryR\bcategory\x128\n" +
 	"\n" +
-	"dimensions\x18\a \x01(\v2\x18.inventory.v1.DimensionsR\n" +
+	"dimensions\x18\a \x01(\v2\x18.payment.v1.DimensionsR\n" +
 	"dimensions\x12>\n" +
-	"\fmanufacturer\x18\b \x01(\v2\x1a.inventory.v1.ManufacturerR\fmanufacturer\x12\x12\n" +
+	"\fmanufacturer\x18\b \x01(\v2\x1a.payment.v1.ManufacturerR\fmanufacturer\x12\x12\n" +
 	"\x04tags\x18\t \x03(\tR\x04tags\x12<\n" +
 	"\bmetadata\x18\n" +
-	" \x03(\v2 .inventory.v1.Part.MetadataEntryR\bmetadata\x129\n" +
+	" \x03(\v2 .payment.v1.Part.MetadataEntryR\bmetadata\x129\n" +
 	"\n" +
 	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
 	"updated_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x1aP\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12)\n" +
-	"\x05value\x18\x02 \x01(\v2\x13.inventory.v1.ValueR\x05value:\x028\x01\"\xbc\x01\n" +
+	"\x05value\x18\x02 \x01(\v2\x13.payment.v1.ValueR\x05value:\x028\x01\"\xbc\x01\n" +
 	"\vPartsFilter\x12\x14\n" +
 	"\x05uuids\x18\x01 \x03(\tR\x05uuids\x12\x14\n" +
 	"\x05names\x18\x02 \x03(\tR\x05names\x126\n" +
 	"\n" +
-	"categories\x18\x03 \x03(\x0e2\x16.inventory.v1.CategoryR\n" +
+	"categories\x18\x03 \x03(\x0e2\x16.payment.v1.CategoryR\n" +
 	"categories\x125\n" +
 	"\x16manufacturer_countries\x18\x04 \x03(\tR\x15manufacturerCountries\x12\x12\n" +
 	"\x04tags\x18\x05 \x03(\tR\x04tags\"$\n" +
 	"\x0eGetPartRequest\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\"9\n" +
 	"\x0fGetPartResponse\x12&\n" +
-	"\x04part\x18\x01 \x01(\v2\x12.inventory.v1.PartR\x04part\"E\n" +
+	"\x04part\x18\x01 \x01(\v2\x12.payment.v1.PartR\x04part\"E\n" +
 	"\x10ListPartsRequest\x121\n" +
-	"\x06filter\x18\x01 \x01(\v2\x19.inventory.v1.PartsFilterR\x06filter\"=\n" +
+	"\x06filter\x18\x01 \x01(\v2\x19.payment.v1.PartsFilterR\x06filter\"=\n" +
 	"\x11ListPartsResponse\x12(\n" +
-	"\x05parts\x18\x01 \x03(\v2\x12.inventory.v1.PartR\x05parts*v\n" +
+	"\x05parts\x18\x01 \x03(\v2\x12.payment.v1.PartR\x05parts*v\n" +
 	"\bCategory\x12\x18\n" +
 	"\x14CATEGORY_UNSPECIFIED\x10\x00\x12\x13\n" +
 	"\x0fCATEGORY_ENGINE\x10\x01\x12\x11\n" +
@@ -821,8 +821,8 @@ const file_inventory_v1_inventory_proto_rawDesc = "" +
 	"\x11CATEGORY_PORTHOLE\x10\x03\x12\x11\n" +
 	"\rCATEGORY_WING\x10\x042\xa8\x01\n" +
 	"\x10InventoryService\x12F\n" +
-	"\aGetPart\x12\x1c.inventory.v1.GetPartRequest\x1a\x1d.inventory.v1.GetPartResponse\x12L\n" +
-	"\tListParts\x12\x1e.inventory.v1.ListPartsRequest\x1a\x1f.inventory.v1.ListPartsResponseBNZLgithub.com/AlexKostromin/microsrv/shared/pkg/proto/inventory/v1;inventory_v1b\x06proto3"
+	"\aGetPart\x12\x1c.payment.v1.GetPartRequest\x1a\x1d.payment.v1.GetPartResponse\x12L\n" +
+	"\tListParts\x12\x1e.payment.v1.ListPartsRequest\x1a\x1f.payment.v1.ListPartsResponseBNZLgithub.com/AlexKostromin/microsrv/shared/pkg/proto/payment/v1;inventory_v1b\x06proto3"
 
 var (
 	file_inventory_v1_inventory_proto_rawDescOnce sync.Once
@@ -839,35 +839,35 @@ func file_inventory_v1_inventory_proto_rawDescGZIP() []byte {
 var file_inventory_v1_inventory_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_inventory_v1_inventory_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_inventory_v1_inventory_proto_goTypes = []any{
-	(Category)(0),                 // 0: inventory.v1.Category
-	(*Dimensions)(nil),            // 1: inventory.v1.Dimensions
-	(*Manufacturer)(nil),          // 2: inventory.v1.Manufacturer
-	(*Value)(nil),                 // 3: inventory.v1.Value
-	(*Part)(nil),                  // 4: inventory.v1.Part
-	(*PartsFilter)(nil),           // 5: inventory.v1.PartsFilter
-	(*GetPartRequest)(nil),        // 6: inventory.v1.GetPartRequest
-	(*GetPartResponse)(nil),       // 7: inventory.v1.GetPartResponse
-	(*ListPartsRequest)(nil),      // 8: inventory.v1.ListPartsRequest
-	(*ListPartsResponse)(nil),     // 9: inventory.v1.ListPartsResponse
-	nil,                           // 10: inventory.v1.Part.MetadataEntry
+	(Category)(0),                 // 0: payment.v1.Category
+	(*Dimensions)(nil),            // 1: payment.v1.Dimensions
+	(*Manufacturer)(nil),          // 2: payment.v1.Manufacturer
+	(*Value)(nil),                 // 3: payment.v1.Value
+	(*Part)(nil),                  // 4: payment.v1.Part
+	(*PartsFilter)(nil),           // 5: payment.v1.PartsFilter
+	(*GetPartRequest)(nil),        // 6: payment.v1.GetPartRequest
+	(*GetPartResponse)(nil),       // 7: payment.v1.GetPartResponse
+	(*ListPartsRequest)(nil),      // 8: payment.v1.ListPartsRequest
+	(*ListPartsResponse)(nil),     // 9: payment.v1.ListPartsResponse
+	nil,                           // 10: payment.v1.Part.MetadataEntry
 	(*timestamppb.Timestamp)(nil), // 11: google.protobuf.Timestamp
 }
 var file_inventory_v1_inventory_proto_depIdxs = []int32{
-	0,  // 0: inventory.v1.Part.category:type_name -> inventory.v1.Category
-	1,  // 1: inventory.v1.Part.dimensions:type_name -> inventory.v1.Dimensions
-	2,  // 2: inventory.v1.Part.manufacturer:type_name -> inventory.v1.Manufacturer
-	10, // 3: inventory.v1.Part.metadata:type_name -> inventory.v1.Part.MetadataEntry
-	11, // 4: inventory.v1.Part.created_at:type_name -> google.protobuf.Timestamp
-	11, // 5: inventory.v1.Part.updated_at:type_name -> google.protobuf.Timestamp
-	0,  // 6: inventory.v1.PartsFilter.categories:type_name -> inventory.v1.Category
-	4,  // 7: inventory.v1.GetPartResponse.part:type_name -> inventory.v1.Part
-	5,  // 8: inventory.v1.ListPartsRequest.filter:type_name -> inventory.v1.PartsFilter
-	4,  // 9: inventory.v1.ListPartsResponse.parts:type_name -> inventory.v1.Part
-	3,  // 10: inventory.v1.Part.MetadataEntry.value:type_name -> inventory.v1.Value
-	6,  // 11: inventory.v1.InventoryService.GetPart:input_type -> inventory.v1.GetPartRequest
-	8,  // 12: inventory.v1.InventoryService.ListParts:input_type -> inventory.v1.ListPartsRequest
-	7,  // 13: inventory.v1.InventoryService.GetPart:output_type -> inventory.v1.GetPartResponse
-	9,  // 14: inventory.v1.InventoryService.ListParts:output_type -> inventory.v1.ListPartsResponse
+	0,  // 0: payment.v1.Part.category:type_name -> payment.v1.Category
+	1,  // 1: payment.v1.Part.dimensions:type_name -> payment.v1.Dimensions
+	2,  // 2: payment.v1.Part.manufacturer:type_name -> payment.v1.Manufacturer
+	10, // 3: payment.v1.Part.metadata:type_name -> payment.v1.Part.MetadataEntry
+	11, // 4: payment.v1.Part.created_at:type_name -> google.protobuf.Timestamp
+	11, // 5: payment.v1.Part.updated_at:type_name -> google.protobuf.Timestamp
+	0,  // 6: payment.v1.PartsFilter.categories:type_name -> payment.v1.Category
+	4,  // 7: payment.v1.GetPartResponse.part:type_name -> payment.v1.Part
+	5,  // 8: payment.v1.ListPartsRequest.filter:type_name -> payment.v1.PartsFilter
+	4,  // 9: payment.v1.ListPartsResponse.parts:type_name -> payment.v1.Part
+	3,  // 10: payment.v1.Part.MetadataEntry.value:type_name -> payment.v1.Value
+	6,  // 11: payment.v1.InventoryService.GetPart:input_type -> payment.v1.GetPartRequest
+	8,  // 12: payment.v1.InventoryService.ListParts:input_type -> payment.v1.ListPartsRequest
+	7,  // 13: payment.v1.InventoryService.GetPart:output_type -> payment.v1.GetPartResponse
+	9,  // 14: payment.v1.InventoryService.ListParts:output_type -> payment.v1.ListPartsResponse
 	13, // [13:15] is the sub-list for method output_type
 	11, // [11:13] is the sub-list for method input_type
 	11, // [11:11] is the sub-list for extension type_name
