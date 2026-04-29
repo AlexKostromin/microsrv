@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: payment/v1/payment.proto
+// source: inventory/v1/inventory.proto
 
-// Package payment.v1 содержит API для работы с деталями космических кораблей
+// Package inventory.v1 содержит API для работы с деталями космических кораблей
 
 package inventory_v1
 
@@ -21,8 +21,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	InventoryService_GetPart_FullMethodName   = "/payment.v1.InventoryService/GetPart"
-	InventoryService_ListParts_FullMethodName = "/payment.v1.InventoryService/ListParts"
+	InventoryService_GetPart_FullMethodName   = "/inventory.v1.InventoryService/GetPart"
+	InventoryService_ListParts_FullMethodName = "/inventory.v1.InventoryService/ListParts"
 )
 
 // InventoryServiceClient is the client API for InventoryService service.
@@ -152,7 +152,7 @@ func _InventoryService_ListParts_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var InventoryService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "payment.v1.InventoryService",
+	ServiceName: "inventory.v1.InventoryService",
 	HandlerType: (*InventoryServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -165,5 +165,5 @@ var InventoryService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "payment/v1/payment.proto",
+	Metadata: "inventory/v1/inventory.proto",
 }
